@@ -1,0 +1,66 @@
+
+
+<div class="row">
+    
+    <div class="col-md-4 offset-3">
+        <form>
+            <div class="form-group">
+                <label>Name :</label>
+                <input type="text" [(ngModel)]="Name" [ngModelOptions]="{standalone:true}" class="form-control" id="SName"/>
+            </div>
+            <div class="form-group">
+                <label>DOB :</label>
+                <input type="text" [(ngModel)]="DOB" [ngModelOptions]="{standalone:true}" class="form-control" id="SDOB"/>
+            </div>
+            <div class="form-group">
+                <label>Marks :</label>
+                <input type="text" [(ngModel)]="Marks" [ngModelOptions]="{standalone:true}" class="form-control" id="SMarks"/>
+            </div>
+            <!-- <button type="submit" class="btn btn-primary" (click)="save()">Save</button> -->
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4 offset-3">
+        <h3 class="text-center text-success">All Students</h3>
+        <div class="container-fluid">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <h3 *ngIf="!isResultLoaded">Loading........</h3>
+                <tr>
+               
+                <th>
+                    Student Name
+                </th>
+                <th>
+                    Date of Birth
+                </th>
+                <th>
+                    Marks
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of StudentArray">
+                   
+                    <td>
+                        {{item.Name}}
+                    </td>
+                    <td>
+                        {{item.DOB}}
+                    </td>
+                    <td>
+                        {{item.Marks}}
+                    </td>
+                    <td>
+                        <!-- <button type="button" class="btn btn-success" (click)="setUpdate(item)">Edit</button>
+                        <button type="button" class="btn btn-success" (click)="setDelete(item)">Delete</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
